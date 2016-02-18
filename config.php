@@ -3,14 +3,14 @@
  * Database config variables
  */
 define("DB_HOST", "localhost");
-define("DB_USER", "neurcpiw_pngcmu");
-define("DB_PASSWORD", "Jahid.Hamid");
-define("DB_DATABASE", "neurcpiw_pngcm");
+define("DB_USER", "");			//fill with value
+define("DB_PASSWORD", "");		//fill with value
+define("DB_DATABASE", "");		//fill with value
 
 /*
  * Google API Key
  */
-define("GOOGLE_API_KEY", "AIzaSyBdNH1sB1wV6y4tgpgcJuvHxwEdLUCaCUI"); // Place your Google API Key
+define("GOOGLE_API_KEY", ""); // Place your Google API Key
 //define('GOOGLE_API_URL','https://android.googleapis.com/gcm/send'); //deprecated
 define("GOOGLE_API_URL","https://gcm-http.googleapis.com/gcm/send");
 
