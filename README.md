@@ -1,7 +1,7 @@
 *************************************************
 Server side code for GCM push notification in PHP
 *************************************************
-For a complete tutorial on how you can make use of this project visit [this link](https://neurobin.org.local/docs/android/push-notification-gcm-client-server/).
+For a complete tutorial on how you can make use of this project visit [this link](https://neurobin.org/docs/android/push-notification-gcm-client-server/).
 <span id="server-php-files"></span>
 #PHP files at a glance:
 
