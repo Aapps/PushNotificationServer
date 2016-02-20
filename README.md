@@ -2,15 +2,23 @@
 *************************************************
 Server side code for GCM push notification in PHP
 *************************************************
+For a complete tutorial on how you can make use of this project visit [this link](https://neurobin.org.local/docs/android/push-notification-gcm-client-server/).
+<span id="server-php-files"></span>
+#PHP files at a glance:
 
-#php files and their role:
-     1. db_functions.php: contains Database manipulation functions. Automatically connects to the default database upon object creation.
-     2. db_functions_auth.php: contains Database functions to deal with authentication.
-     3. gcm_main.php: main php file which sends push notification upon form submission in index.php
-     4. index.php: A simple html form to submit message to be sent as push notification.
-     5. register.php: accessed from android device. It stores the registration ID sent from android client app.
-     6. unregister.php: unregisters an ID sent from android client app.
-     7. config.php: database configuration.
-     8. urls.php: Commonly used URLS.
-     9. commonutils.php: Commonly used functions.
-     10. validator.php: Form Validation functions.
+1. **commonutils.php:** Common utilities.
+2. **config.php:** Defines constants. Among all the codes, only this file needs to be modified. Other files can be left untouched.
+3. **db_functions.php:** Database functions for making database connection, storing/retrieving users and their info and performing various tests on the **gcm_users** table.
+4. **gcm_main.php:** This is the file that is responsible for sending push notification.
+5. **index.php:** This is the form i.e the admin panel page.
+6. **register.php:** This is the php file that your client app should post registration id to register with your server.
+7. **unregister.php:** This is the php file that your client app should post registration id to un-register with your server.
+
+<span id="server-php-funcs"></span>
+#Notable PHP functions at a glance:
+
+1. `redirect($url)`: Redirects to the specified url.
+2. `storeUser($gcm_regid, $instanceId, $name, $email)`: Member function of **DB_Functions_GCM** class. Stores registration id in database along with other info.
+3. `checkUserById($id)`: Member function of **DB_Functions_GCM** class. Checks if an existing user already exists in database with the same registration id.
+4. `deleteUserById($id)`: Member function of **DB_Functions_GCM** class. Deletes a user from database according to the registration id (unsubscribe).
+5. `sendPushNotification($registration_ids, $message)`: Sends push notification `$message` to all ids in the `$registration_ids` array.
