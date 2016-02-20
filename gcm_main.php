@@ -71,7 +71,7 @@ if (isset($gcmRegIds) && isset($pushMessage)) {
 	foreach ($regIdChunk as $RegId) {
 		$pushStatus = sendPushNotification($RegId, $message);
 	}
-	//redirect(PWD); //Comment this out if you want to redirected to previous page
+	redirect(PWD); //Comment this if you want do not want to be redirected to previous page
 } else {
 	echo "Unknown error occured, contact your Push Notification Service Provider";
 
